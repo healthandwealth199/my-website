@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>موقعي الشخصي</title>
+  <meta name="description" content="هذا موقعي الشخصي التجريبي." />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">موقعي</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#">من أنا</a></li>
+          <li><a href="#">الأعمال</a></li>
+          <li><a href="#">تواصل معي</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article class="post">
+      <h1 class="post-title">أهلاً بك في موقعي</h1>
+      <p class="post-meta">آخر تحديث: 23 أكتوبر 2025</p>
+
+      <figure class="featured-image">
+        <img src="assets/images/featured.jpg" alt="صورة تجريبية">
+      </figure>
+
+      <section class="post-body">
+        <p>مرحباً! هذا مثال لموقعي الإلكتروني الذي صممته بمساعدة ChatGPT ورفعته على GitHub Pages مجاناً.</p>
+        <p>يمكنك تعديل النصوص والصور كما تشاء بسهولة.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+</body>
+</html>
