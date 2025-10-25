@@ -1,47 +1,156 @@
-<!doctype html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>موقعي الشخصي</title>
-  <meta name="description" content="هذا موقعي الشخصي التجريبي." />
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصحة والثراء | Health & Wealth</title>
+  <style>
+    body {
+      font-family: "Tajawal", Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background-color: #027a48;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background-color: #046b3f;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffe066;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
+      color: #046b3f;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+    footer {
+      background-color: #027a48;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    button {
+      background-color: #027a48;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #046b3f;
+    }
+    a { text-decoration: none; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#">موقعي</a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">الرئيسية</a></li>
-          <li><a href="#">من أنا</a></li>
-          <li><a href="#">الأعمال</a></li>
-          <li><a href="#">تواصل معي</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>🌿 الصحة والثراء | Health & Wealth 🌿</h1>
+    <p>منتجات طبيعية تمنحك صحة أفضل وحياة أزدهار</p>
   </header>
 
-  <main class="container content">
-    <article class="post">
-      <h1 class="post-title">أهلاً بك في موقعي</h1>
-      <p class="post-meta">آخر تحديث: 23 أكتوبر 2025</p>
+  <nav>
+    <a href="#about">عن الموقع</a>
+    <a href="#products">منتجاتنا</a>
+    <a href="#join">انضم إلينا</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
 
-      <figure class="featured-image">
-        <img src="assets/images/featured.jpg" alt="صورة تجريبية">
-      </figure>
+  <section id="about">
+    <h2>عن الصحة والثراء</h2>
+    <p>
+      نحن فريق متخصص في تقديم منتجات DXN الطبيعية التي تساعدك على تعزيز صحتك وتحسين نمط حياتك،
+      مع فرصة مميزة للانضمام إلينا وبناء فريقك الخاص وتحقيق دخل إضافي.
+    </p>
+  </section>
 
-      <section class="post-body">
-        <p>مرحباً! هذا مثال لموقعي الإلكتروني الذي صممته بمساعدة ChatGPT ورفعته على GitHub Pages مجاناً.</p>
-        <p>يمكنك تعديل النصوص والصور كما تشاء بسهولة.</p>
-      </section>
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 جميع الحقوق محفوظة.</p>
+  <section id="products">
+    <h2>منتجاتنا الطبيعية</h2>
+    <div class="products">
+      <div class="product">
+        <h3>قهوة لينجزي</h3>
+        <p>قهوة طبيعية غنية بفطر الجانوديرما تعزز النشاط والطاقة اليومية.</p>
+      </div>
+      <div class="product">
+        <h3>سبيرولينا</h3>
+        <p>مكمل غذائي فائق يحتوي على المعادن والفيتامينات الأساسية.</p>
+      </div>
+      <div class="product">
+        <h3>صابون جانوزي</h3>
+        <p>صابون طبيعي للعناية بالبشرة يحتوي على مستخلص فطر الجانوديرما.</p>
+      </div>
     </div>
+  </section>
+
+  <section id="join">
+    <h2>انضم إلى فريقي</h2>
+    <p>هل ترغب بأن تكون جزءًا من فريق الصحة والثراء؟</p>
+    <p>ابدأ رحلتك اليوم نحو الحرية المالية والصحة المثالية.</p>
+
+    <div class="buttons">
+      <a href="https://wa.me/967733604941" target="_blank"><button>انضم عبر واتساب</button></a>
+      <a href="https://t.me/Drrashad20" target="_blank"><button>انضم عبر تيليجرام</button></a>
+      <a href="https://www.facebook.com/drrashad.MLM" target="_blank"><button>تابعنا على فيسبوك</button></a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>نسعد بتواصلك معنا لأي استفسارات حول المنتجات أو الانضمام للفريق.</p>
+    <div class="buttons">
+      <a href="https://wa.me/967733604941" target="_blank"><button>تواصل عبر واتساب</button></a>
+      <a href="https://t.me/Drrashad20" target="_blank"><button>راسلنا على تيليجرام</button></a>
+      <a href="https://www.facebook.com/drrashad.MLM" target="_blank"><button>فيسبوك</button></a>
+      <a href="mailto:drrashadhandw@gmail.com"><button>البريد الإلكتروني</button></a>
+    </div>
+  </section>
+  
+  <footer>
+    <p>© 2025 الصحة والثراء | Health & Wealth. جميع الحقوق محفوظة.</p>
   </footer>
 </body>
 </html>
