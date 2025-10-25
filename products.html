@@ -33,6 +33,30 @@
     }
     nav a:hover { color: #ffe066; }
 
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px auto;
+    }
+
+    .filter-buttons button {
+      background-color: #027a48;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .filter-buttons button:hover,
+    .filter-buttons button.active {
+      background-color: #046b3f;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -46,6 +70,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
       padding: 1rem;
+      transition: 0.3s;
     }
 
     .product img {
@@ -56,17 +81,18 @@
       margin-bottom: 10px;
     }
 
-    button {
+    button.order {
       background-color: #027a48;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
       cursor: pointer;
+      margin-top: 10px;
       transition: 0.3s;
     }
 
-    button:hover {
+    button.order:hover {
       background-color: #046b3f;
     }
 
@@ -92,31 +118,64 @@
     <a href="#contact">تواصل معنا</a>
   </nav>
 
-  <section class="products">
-    <div class="product">
+  <!-- أزرار التصفية -->
+  <div class="filter-buttons">
+    <button class="active" onclick="filterProducts('all')">الكل</button>
+    <button onclick="filterProducts('drink')">مشروبات</button>
+    <button onclick="filterProducts('supplement')">مكملات غذائية</button>
+    <button onclick="filterProducts('care')">عناية شخصية</button>
+  </div>
+
+  <!-- المنتجات -->
+  <section class="products" id="products">
+    <div class="product drink">
       <img src="https://i.imgur.com/xKH7k8f.jpg" alt="قهوة لينجزي">
       <h3>قهوة لينجزي</h3>
       <p>قهوة فاخرة ممزوجة بفطر الجانوديرما، تمنحك طاقة وحيوية طبيعية.</p>
-      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20قهوة%20لينجزي"><button>طلب عبر واتساب</button></a>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20قهوة%20لينجزي"><button class="order">طلب عبر واتساب</button></a>
     </div>
 
-    <div class="product">
+    <div class="product supplement">
       <img src="https://i.imgur.com/EqZp7oF.jpg" alt="سبيرولينا">
       <h3>سبيرولينا</h3>
       <p>غذاء متكامل يحتوي على الفيتامينات والمعادن، مناسب لجميع الأعمار.</p>
-      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20منتج%20سبيرولينا"><button>طلب عبر واتساب</button></a>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20منتج%20سبيرولينا"><button class="order">طلب عبر واتساب</button></a>
     </div>
 
-    <div class="product">
+    <div class="product care">
       <img src="https://i.imgur.com/MfwA6XU.jpg" alt="صابون جانوزي">
       <h3>صابون جانوزي</h3>
       <p>صابون طبيعي للعناية بالبشرة بتركيبة فريدة من الجانوديرما والزيوت النباتية.</p>
-      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20صابون%20جانوزي"><button>طلب عبر واتساب</button></a>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20صابون%20جانوزي"><button class="order">طلب عبر واتساب</button></a>
+</div>
+<div class="product drink">
+      <img src="https://i.imgur.com/aOSwLQd.jpg" alt="شاي لينجزي">
+      <h3>شاي لينجزي</h3>
+      <p>شاي طبيعي غني بمضادات الأكسدة يعزز المناعة ويمنحك صفاء ذهنياً.</p>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20شاي%20لينجزي"><button class="order">طلب عبر واتساب</button></a>
     </div>
   </section>
 
   <footer>
     <p>© 2025 الصحة والثراء | جميع الحقوق محفوظة</p>
   </footer>
+
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      const buttons = document.querySelectorAll('.filter-buttons button');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      products.forEach(product => {
+        if (category === 'all' || product.classList.contains(category)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
