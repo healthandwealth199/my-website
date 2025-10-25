@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منتجات الصحة والثراء</title>
+  <style>
+    body {
+      font-family: "Tajawal", Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background-color: #027a48;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    header h1 { margin: 0; }
+    nav {
+      background-color: #046b3f;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { color: #ffe066; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #027a48;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #046b3f;
+    }
+
+    footer {
+      background-color: #027a48;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>منتجاتنا الطبيعية 🌿</h1>
+    <p>صحتك تبدأ من الطبيعة – اكتشف أفضل منتجات DXN</p>
+  </header>
+
+  <nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="products.html">منتجاتنا</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <section class="products">
+    <div class="product">
+      <img src="https://i.imgur.com/xKH7k8f.jpg" alt="قهوة لينجزي">
+      <h3>قهوة لينجزي</h3>
+      <p>قهوة فاخرة ممزوجة بفطر الجانوديرما، تمنحك طاقة وحيوية طبيعية.</p>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20قهوة%20لينجزي"><button>طلب عبر واتساب</button></a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.imgur.com/EqZp7oF.jpg" alt="سبيرولينا">
+      <h3>سبيرولينا</h3>
+      <p>غذاء متكامل يحتوي على الفيتامينات والمعادن، مناسب لجميع الأعمار.</p>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20منتج%20سبيرولينا"><button>طلب عبر واتساب</button></a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.imgur.com/MfwA6XU.jpg" alt="صابون جانوزي">
+      <h3>صابون جانوزي</h3>
+      <p>صابون طبيعي للعناية بالبشرة بتركيبة فريدة من الجانوديرما والزيوت النباتية.</p>
+      <a href="https://wa.me/00967733604941?text=أرغب%20بطلب%20صابون%20جانوزي"><button>طلب عبر واتساب</button></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 الصحة والثراء | جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
