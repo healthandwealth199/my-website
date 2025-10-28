@@ -1,0 +1,118 @@
+<!-- File: products.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>منتجات DXN — الصحة والثراء</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#ffdf6b; --green:#0a7b56; --maroon:#8b1d1d;
+    --card: rgba(255,255,255,0.06); --text:#f3f3f3;
+  }
+  body{font-family:'Cairo',sans-serif;margin:0;background:linear-gradient(120deg,#0a7b56,#8b1d1d,#6b3f2f);color:var(--text)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(0,0,0,0.35);position:sticky;top:0;z-index:99}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:48px;height:48px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--green);font-weight:700}
+  nav a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  nav a:hover{color:var(--gold)}
+  .container{max-width:1100px;margin:18px auto;padding:0 16px}
+  .card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:16px}
+  h1,h2{font-family:'Poppins',sans-serif;color:var(--gold);margin:0 0 10px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .category{background:rgba(255,255,255,0.04);padding:12px;border-radius:10px;text-align:right}
+  .category img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+  .btn{display:inline-block;background:var(--green);color:#fff;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+  footer{padding:18px;text-align:center;color:#ddd;background:rgba(0,0,0,0.3);margin-top:20px}
+  @media(max-width:600px){ .topbar{flex-direction:column;gap:8px} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="logo">🌿</div>
+    <div>
+      <div style="font-weight:700;color:var(--gold)">الصحة والثراء</div>
+      <div style="font-size:0.85rem;color:#eee">Health & Wealth — DXN Products</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about-dxn.html">عن DXN</a>
+    <a href="products.html">المنتجات</a>
+    <a href="certificates.html">الشهادات</a>
+    <a href="testimonials.html">تجارب العملاء</a>
+    <a href="join.html">انضم إلينا</a>
+    <a href="contact.html">تواصل</a>
+  </nav>
+</div>
+
+<main class="container">
+  <div class="card">
+    <h1>منتجات DXN — فئات منظمة</h1>
+    <p>اختر الفئة لعرض المنتجات الكاملة ذات الصور عالية الجودة والوصف المفصّل وزر الطلب عبر واتساب.</p>
+  </div>
+
+  <section class="card">
+    <h2>فئات المنتجات</h2>
+    <div class="grid" style="margin-top:12px;">
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/spirulina.jpg" alt="المكملات الغذائية">
+        <strong>المكملات الغذائية</strong>
+        <p>السبيرولينا، الرِّيشي، والمركبات المغذية.</p>
+        <p><a class="btn" href="supplements.html">عرض الفئة</a></p>
+      </div>
+
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/ganozhi-cream.jpg" alt="العناية بالبشرة">
+        <strong>العناية بالبشرة</strong>
+        <p>كريمات وصابون جانوزي ومنتجات تجميل طبيعية.</p>
+        <p><a class="btn" href="skincare.html">عرض الفئة</a></p>
+      </div>
+
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/toothpaste.jpg" alt="العناية الشخصية">
+        <strong>العناية الشخصية</strong>
+        <p>معجون الأسنان، الشامبو، ومنتجات الاستحمام.</p>
+        <p><a class="btn" href="personalcare.html">عرض الفئة</a></p>
+      </div>
+
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/lingzhi-coffee-3-in-1.jpg" alt="المشروبات الساخنة">
+        <strong>المشروبات الساخنة</strong>
+        <p>قهوة لينجزي، كاكاو صحي، مشروبات دافئة.</p>
+        <p><a class="btn" href="hotdrinks.html">عرض الفئة</a></p>
+      </div>
+
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/morinzhi.jpg" alt="المشروبات الصحية">
+        <strong>المشروبات الصحية</strong>
+        <p>مورينزي ومشروبات مغذية لتجديد الطاقة.</p>
+        <p><a class="btn" href="healthdrinks.html">عرض الفئة</a></p>
+      </div>
+
+      <div class="category">
+        <img src="https://dxn2u.net/wp-content/uploads/2020/04/detergent.jpg" alt="منتجات التنظيف">
+        <strong>منتجات التنظيف</strong>
+        <p>منظفات منزلية آمنة وصديقة للبيئة.</p>
+        <p><a class="btn" href="cleaning.html">عرض الفئة</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div style="margin-top:12px" class="card">
+    <h2>مصادر ومعلومات إضافية</h2>
+    <p>للمزيد من التفاصيل عن تراخيص وانتشار DXN، اقرأ المقال الكامل على <a href="https://dxnnews.com/%d9%85%d8%a7%d9%87%d9%8a-%d8%b4%d8%b1%d9%83%d8%a9-dxn-%d9%85%d9%86%d8%aa%d8%ac%d8%a7%d8%aa%d9%87%d8%a7-%d8%a7%d9%84%d8%b9%d9%85%d9%84-%d9%81%d9%8a%d9%87%d8%a7/" target="_blank" style="color:var(--gold)">DXN News</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 الصحة والثراء — جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
