@@ -1,219 +1,506 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الصحة والثراء | Health & Wealth</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>الصحة والثراء | Health & Wealth — DXN</title>
 
-<!-- الخطوط -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+<!-- خطوط -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(120deg, #0a7b56, #b91d1d, #0066cc);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #fff;
-  text-align: center;
-}
+  :root{
+    --gold: #ffdf6b;
+    --dxn-green: #0a7b56;
+    --dxn-maroon: #8b1d1d;
+    --dxn-brown: #6b3f2f;
+    --card-bg: rgba(255,255,255,0.08);
+    --glass: rgba(255,255,255,0.06);
+    --text: #f5f5f5;
+  }
 
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Cairo', sans-serif;
+    color:var(--text);
+    background: linear-gradient(120deg, var(--dxn-green), var(--dxn-maroon), var(--dxn-brown));
+    background-size: 300% 300%;
+    animation: bgShift 18s ease infinite;
+    -webkit-font-smoothing:antialiased;
+  }
+  @keyframes bgShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
 
-header {
-  padding: 15px;
-  background: rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+  /* شريط علوي */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 18px;
+    background: rgba(0,0,0,0.35);
+    position:sticky;
+    top:0;
+    z-index:999;
+    border-bottom: 3px solid rgba(255,255,255,0.06);
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo {
+    width:56px;height:56px;border-radius:10px;
+    background: linear-gradient(180deg,#eff9ef,#dff3e6);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--dxn-green);font-family:'Poppins',sans-serif;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  }
+  .site-title{
+    display:flex;flex-direction:column;
+  }
+  .site-title .main{
+    font-family:'Poppins',sans-serif;
+    color:var(--gold);
+    font-size:1.15rem;
+    margin:0;
+  }
+  .site-title .sub{
+    font-size:0.85rem;color:#f7f7f7;opacity:0.9;margin-top:3px;
+  }
 
-header h1 {
-  font-family: 'Poppins', sans-serif;
-  color: #FFD700;
-  font-size: 1.8em;
-  margin: 0;
-}
+  nav.main-nav{
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  }
+  nav.main-nav a{
+    color:var(--text);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;
+  }
+  nav.main-nav a:hover{background:var(--glass);color:var(--gold)}
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 8px;
-  font-size: 1.1em;
-}
+  /* زر اللغة */
+  .lang-btn{
+    display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.15); padding:6px 10px;border-radius:20px;cursor:pointer;
+  }
+  .lang-btn img{width:22px;height:16px;border-radius:3px;object-fit:cover;}
 
-nav a:hover {
-  color: #FFD700;
-}
+  /* الحاوية العامة */
+  .container{max-width:1100px;margin:28px auto;padding:0 16px}
 
-.language-switch {
-  margin-top: 8px;
-}
+  /* قِسم البطاقة */
+  .card{
+    background:var(--card-bg);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
 
-.language-switch button {
-  background: none;
-  border: 1px solid #FFD700;
-  color: #FFD700;
-  font-size: 0.9em;
-  margin: 0 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+  h1,h2,h3{font-family:'Poppins',sans-serif;margin:0}
+  h1{color:var(--gold);font-size:1.6rem}
+  h2{color:var(--gold);font-size:1.4rem;margin-bottom:10px}
+  h3{color:var(--gold);font-size:1.05rem;margin:0 0 8px 0}
 
-.language-switch img {
-  width: 22px;
-  vertical-align: middle;
-  margin-left: 6px;
-}
+  p{color:#f0f0f0;line-height:1.8}
 
-section {
-  padding: 30px 15px;
-}
+  /* قسم "عن DXN" */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 340px;
+    gap:18px;align-items:center;
+  }
+  .about-grid img{width:100%;border-radius:12px;object-fit:cover;height:260px}
 
-h2 {
-  color: #FFD700;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 15px;
-}
+  /* منتجات */
+  .products-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:18px;
+    margin-top:12px;
+  }
+  .product{
+    background:rgba(255,255,255,0.06);
+    border-radius:12px;padding:12px; text-align:right;
+  }
+  .product img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+  .product p{font-size:0.98rem;color:#f1f1f1}
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-  color: #f2f2f2;
-}
+  .btn{
+    display:inline-block;background:var(--dxn-green);color:white;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;
+    box-shadow:0 6px 14px rgba(10,123,86,0.18);
+  }
+  .btn.secondary{background:var(--dxn-maroon);}
 
-/* قسم المنتجات */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
+  /* شهادات */
+  .cert-grid{display:flex;gap:14px;flex-wrap:wrap}
+  .cert{background:rgba(255,255,255,0.06);padding:12px;border-radius:10px;min-width:180px;flex:1 1 200px;text-align:center}
+  .cert img{width:100%;height:120px;object-fit:contain;margin-bottom:8px}
 
-.product-card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 15px;
-  padding: 15px;
-  transition: transform 0.3s;
-}
+  /* تجارب العملاء (قائمة فيديوهات) */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .test-card{background:rgba(255,255,255,0.05);padding:12px;border-radius:12px;text-align:right}
+  .test-card a{color:var(--gold);font-weight:700;text-decoration:none}
 
-.product-card:hover {
-  transform: scale(1.05);
-}
+  /* تذييل */
+  footer{padding:18px;background:rgba(0,0,0,0.45);margin-top:18px;border-top:2px solid rgba(255,255,255,0.04);text-align:center}
+  .socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .socials a{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.03)}
+  .socials a:hover{background:rgba(255,255,255,0.06);color:var(--gold)}
 
-.product-card img {
-  width: 100%;
-  border-radius: 10px;
-}
+  /* استجابة */
+  @media(max-width:960px){
+    .about-grid{grid-template-columns:1fr}
+    .topbar{padding:10px}
+  }
+  @media(max-width:480px){
+    .logo{width:48px;height:48px;font-size:14px}
+    h1{font-size:1.2rem}
+    .lang-btn{padding:6px 8px}
+  }
 
-.product-card h3 {
-  color: #FFD700;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* زر واتساب */
-.whatsapp-btn {
-  background: #25D366;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.whatsapp-btn:hover {
-  background: #1da851;
-}
-
-/* التذييل */
-footer {
-  background: rgba(0,0,0,0.4);
-  padding: 20px;
-  color: #FFD700;
-  font-size: 1em;
-}
-
-.social-links a {
-  color: white;
-  margin: 0 8px;
-  font-size: 1.4em;
-  text-decoration: none;
-}
+  /* تأثير تلاشي للعناوين عند الظهور */
+  .fade-in { opacity:0; transform:translateY(20px); transition:all .9s ease; }
+  .fade-in.visible{ opacity:1; transform:translateY(0); }
 </style>
 </head>
 
 <body>
-<header>
-  <h1>الصحة والثراء | Health & Wealth</h1>
-  <nav>
-    <a href="#about">عن الموقع</a>
-    <a href="#products">منتجاتنا</a>
-    <a href="#join">انضم إلينا</a>
-    <a href="#contact">تواصل معنا</a>
-  </nav>
-  <div class="language-switch">
-    <button><img src="https://flagcdn.com/w20/ye.png"> العربية</button>
-    <button><img src="https://flagcdn.com/w20/us.png"> English</button>
-  </div>
-</header>
-
-<section id="about">
-  <h2>عن الصحة والثراء</h2>
-  <p>نحن فريق متخصص في تقديم منتجات <strong>DXN</strong> الطبيعية التي تساعدك على تعزيز صحتك وتحسين نمط حياتك، مع فرصة مميزة للانضمام إلينا وبناء فريقك الخاص وتحقيق دخل إضافي.</p>
-</section>
-
-<section id="products">
-  <h2>منتجاتنا الطبيعية</h2>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://i.imgur.com/Xe1mMsp.jpg" alt="قهوة لينجزي">
-      <h3>قهوة لينجزي</h3>
-      <p>قهوة طبيعية غنية بفطر الجانوديرما لتعزيز النشاط والطاقة اليومية.</p>
+  <!-- رأس الصفحة -->
+  <div class="topbar">
+    <div class="brand" style="gap:12px">
+      <div class="logo">🌿</div>
+      <div class="site-title">
+        <div class="main">الصحة والثراء</div>
+        <div class="sub">Health & Wealth — منتجات DXN</div>
+      </div>
     </div>
 
-    <div class="product-card">
-      <img src="https://i.imgur.com/4Tj7Byu.jpg" alt="سبيرولينا">
-      <h3>سبيرولينا</h3>
-      <p>مكمل غذائي غني بالمعادن والفيتامينات الأساسية لتقوية المناعة والطاقة.</p>
-    </div>
+    <div style="display:flex;align-items:center;gap:18px;">
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#about">عن DXN</a>
+        <a href="#products">المنتجات</a>
+        <a href="#certs">الشهادات</a>
+        <a href="#testimonials">تجارب العملاء</a>
+        <a href="#join">انضم إلينا</a>
+        <a href="#contact">تواصل</a>
+      </nav>
 
-    <div class="product-card">
-      <img src="https://i.imgur.com/4y2iASe.jpg" alt="صابون جانوزي">
-      <h3>صابون جانوزي</h3>
-      <p>صابون طبيعي للعناية بالبشرة مستخلص من فطر الجانوديرما النقي.</p>
+      <div class="lang-btn lang-btn-container" title="تبديل اللغة" style="margin-left:8px">
+        <button class="lang-btn" id="langSwitch" onclick="toggleLang()">
+          <img id="flagIcon" src="https://flagcdn.com/w20/ye.png" alt="YE">
+          <span id="langLabel">العربية</span>
+        </button>
+      </div>
     </div>
   </div>
-</section>
 
-<section id="join">
-  <h2>انضم إلى فريقي</h2>
-  <p>يمكنك التسجيل معي في شركة DXN الماليزية العالمية والتمتع بالخصومات والرحلات السنوية المجانية من خلال الرابط:</p>
-  <a class="whatsapp-btn" href="https://eworld.dxn2u.com/s/accreg/ar/141194666" target="_blank">انضم الآن</a>
-</section>
+  <main class="container">
 
-<section id="contact">
-  <h2>تواصل معنا مباشرة</h2>
-  <a class="whatsapp-btn" href="https://wa.me/00967733604941" target="_blank">💬 تواصل عبر واتساب</a>
-  <div class="social-links" style="margin-top:20px;">
-    <a href="https://www.facebook.com/drrashad.MLM" target="_blank">📘</a>
-    <a href="https://m.me/dr.Rashad.Alhadi2022" target="_blank">💬</a>
-    <a href="http://instagram.com/dr_rashad_alhadi" target="_blank">📸</a>
-    <a href="https://t.me/Drrashad20" target="_blank">✈️</a>
-    <a href="https://www.tiktok.com/@alhadi_rashad?_t=ZS-90sfbzg1eRl&_r=1" target="_blank">🎵</a>
-    <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank">▶️</a>
-  </div>
-</section>
+    <!-- نبذة عن الشركة -->
+    <section id="about" class="card">
+      <div class="fade-in" id="aboutTitle"><h2>عن شركة DXN</h2></div>
+      <div class="about-grid" style="margin-top:12px">
+        <div>
+          <p>
+            تأسست شركة <strong>DXN</strong> في ماليزيا عام 1993 على يد الدكتور ليم سيو جين.
+            بدأت برؤية بسيطه: توفير منتجات طبيعية ذات جودة عالية مشتقة من فطر الريشي (الجانوديرما)
+            والمكونات النباتية الأخرى لدعم الصحة والعافية. اليوم تعمل DXN في أكثر من 180 دولة
+            وتقدم مجموعة واسعة من المكملات والمشروبات ومنتجات العناية الشخصية.
+          </p>
 
-<footer>
-  <p>© 2025 الصحة والثراء | جميع الحقوق محفوظة</p>
-</footer>
+          <p style="margin-top:10px">
+            فلسفة DXN: الجمع بين <strong>الصحة والثراء</strong> — أي أن الصحة الجيدة تمنحك القدرة على الإنتاج وبناء مستقبل مالي مستقر.
+          </p>
+
+          <p style="margin-top:14px">
+            <a class="btn" href="#products">عرض المنتجات</a>
+            <a class="btn secondary" href="https://eworld.dxn2u.com/s/accreg/ar/141194666" target="_blank" style="margin-left:10px">سجل الآن</a>
+          </p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <img src="https://dxn2u.net/wp-content/uploads/2020/04/lingzhi-coffee-3-in-1.jpg" alt="DXN product" />
+          <img src="https://dxn2u.net/wp-content/uploads/2020/04/spirulina.jpg" alt="DXN spirulina" style="height:140px;object-fit:cover;border-radius:10px" />
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المنتجات مفصل -->
+    <section id="products" class="card">
+      <div class="fade-in" id="prodTitle"><h2>منتجات DXN الطبيعية</h2></div>
+      <p>مجموعتنا مُنظّمة حسب الفئات لتسهل عليك التصفح والاختيار — اضغط على أي منتج لطلبه عبر واتساب.</p>
+
+      <!-- الفئات -->
+      <div style="margin-top:18px">
+        <!-- المكملات -->
+        <div style="margin-bottom:14px">
+          <h3>🌿 المكملات الغذائية</h3>
+          <div class="products-grid">
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/spirulina.jpg" alt="Spirulina">
+              <strong>سبيرولينا</strong>
+              <p>غني بالفيتامينات والمعادن ويساعد في تقوية المناعة.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/ganothera.jpg" alt="Reishi Extract">
+              <strong>ريشي (جانوديرما)</strong>
+              <p>مكمل طبيعي لدعم الصحة العامة ومقاومة الإجهاد.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/morinzhi.jpg" alt="Morinzhi">
+              <strong>مورينزي (مشروبات صحية)</strong>
+              <p>مشروب مُغذّي يمد الجسم بالمركبات النباتية المفيدة.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- العناية بالبشرة -->
+        <div style="margin-bottom:14px">
+          <h3>💆‍♀️ العناية بالبشرة</h3>
+          <div class="products-grid">
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/ganozhi-cream.jpg" alt="Ganozhi Cream">
+              <strong>كريم جانوزي</strong>
+              <p>تركيبة طبيعية لتغذية البشرة وتجديدها.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/soap.jpg" alt="Ganozhi Soap">
+              <strong>صابون جانوزي</strong>
+              <p>صابون طبيعي لطيف للعناية اليومية بالبشرة.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- العناية الشخصية -->
+        <div style="margin-bottom:14px">
+          <h3>🧴 العناية الشخصية</h3>
+          <div class="products-grid">
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/toothpaste.jpg" alt="Toothpaste">
+              <strong>معجون جانوزي</strong>
+              <p>معجون أسنان طبيعي مع خصائص وقائية.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/shampoo.jpg" alt="Shampoo">
+              <strong>شامبو طبيعي</strong>
+              <p>يهتم بفروة الرأس ويمنح لمعانًا للشعر.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- المشروبات الساخنة -->
+        <div style="margin-bottom:14px">
+          <h3>☕ المشروبات الساخنة</h3>
+          <div class="products-grid">
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/lingzhi-coffee-3-in-1.jpg" alt="Lingzhi Coffee">
+              <strong>قهوة لينجزي</strong>
+              <p>قهوة مميزة ممزوجة بمستخلص الجانوديرما.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/cocoa.jpg" alt="Cocoa">
+              <strong>كاكاو صحي</strong>
+              <p>مشروب ساخن لذيذ ومغذٍّ.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- مشروبات صحية وأخرى -->
+        <div style="margin-bottom:14px">
+          <h3>🍹 مشروبات صحية ومنتجات أخرى</h3>
+          <div class="products-grid">
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/cordyceps.jpg" alt="Cordyceps">
+              <strong>مستخلصات أخرى</strong>
+              <p>منتجات متخصصة لصحة الجهاز التنفسي والطاقة.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product">
+              <img src="https://dxn2u.net/wp-content/uploads/2020/04/detergent.jpg" alt="Cleaner">
+              <strong>منتجات تنظيف</strong>
+              <p>منظفات منزلية صديقة للبيئة وآمنة.</p>
+              <a class="btn" href="https://wa.me/00967733604941" target="_blank">اطلب عبر واتساب</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- شهادات واعتمادات -->
+    <section id="certs" class="card">
+      <div class="fade-in"><h2>شهادات الجودة والاعتمادات</h2></div>
+      <p>تلتزم شركة DXN بمعايير التصنيع الجيد والحصول على شهادات جودة عالمية تضمن سلامة المنتجات وجودتها.</p>
+
+      <div class="cert-grid" style="margin-top:14px">
+        <div class="cert">
+          <img src="https://i.imgur.com/1uM3b0W.png" alt="ISO">
+          <div><strong>ISO 9001</strong></div>
+          <div style="font-size:0.95rem;color:#ddd;margin-top:6px">نظام إدارة الجودة</div>
+        </div>
+
+        <div class="cert">
+          <img src="https://i.imgur.com/5Y6X9qP.png" alt="GMP">
+          <div><strong>GMP</strong></div>
+          <div style="font-size:0.95rem;color:#ddd;margin-top:6px">ممارسات التصنيع الجيد</div>
+        </div>
+
+        <div class="cert">
+          <img src="https://i.imgur.com/8Q7d0hJ.png" alt="Halal">
+          <div><strong>HALAL</strong></div>
+          <div style="font-size:0.95rem;color:#ddd;margin-top:6px">اعتماد الحلال</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تجارب العملاء -->
+    <section id="testimonials" class="card">
+      <div class="fade-in"><h2>تجارب العملاء وقصص الشفاء</h2></div>
+      <p>شهادات فيديو حقيقية ومقاطع مستقاة من تجارب طبية وحالات شفاء معروفة — شاهد القصص كاملة على قناتنا أو مباشرة على يوتيوب.</p>
+
+      <div class="test-grid" style="margin-top:12px">
+        <div class="test-card">
+          <strong>د. رشاد الهادي — قصتي مع المكملات</strong>
+          <p><a href="https://youtu.be/XuFL7cg_JG0" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+        <div class="test-card">
+          <strong>د. محمود عنداني — تعافي من الروماتيزم</strong>
+          <p><a href="https://youtu.be/fB17w2HJOnA" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+        <div class="test-card">
+          <strong>د. سحر عبدالعال — حالات تأخر الحمل</strong>
+          <p><a href="https://youtu.be/r3s9bdf9opA" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+        <div class="test-card">
+          <strong>تشافي مريض الفشل الكلوي</strong>
+          <p><a href="https://youtu.be/es-dOAxhq4U" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+        <div class="test-card">
+          <strong>قصة الدكتورة إرسال النعماني</strong>
+          <p><a href="https://youtu.be/dTcY8KDiI4U?si=NWi6AGSllZQSVPHI" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+        <div class="test-card">
+          <strong>حالة 85 سنة — استعادة الحركة</strong>
+          <p><a href="https://youtu.be/LcwPQk0BiQY" target="_blank">▶️ شاهد الفيديو</a></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- انضم الينا -->
+    <section id="join" class="card">
+      <div class="fade-in"><h2>انضم إلى فريقي</h2></div>
+      <p>سجل الآن مع شركة DXN الماليزية وابدأ رحلة الصحة والربح. التسجيل يتم عبر الرابط الرسمي للشركة — انقر للتسجيل والبدء فورا.</p>
+      <p style="margin-top:16px"><a class="btn" href="https://eworld.dxn2u.com/s/accreg/ar/141194666" target="_blank">🚀 سجّل الآن في DXN</a></p>
+      <p style="margin-top:10px;color:#ddd;font-size:0.95rem">بعد التسجيل سأقدّم لك تدريبًا شخصيًا، مواد تسويقية، ودعمًا مباشرًا عبر واتساب وقناة التليجرام.</p>
+    </section>
+
+    <!-- تواصل -->
+    <section id="contact" class="card">
+      <div class="fade-in"><h2>تواصل معنا</h2></div>
+      <p>يمكنك التواصل مباشرة عبر الوسائل التالية — سهل وسريع:</p>
+
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="https://wa.me/00967733604941" target="_blank">💬 واتساب</a>
+        <a class="btn secondary" href="https://m.me/dr.Rashad.Alhadi2022" target="_blank" style="background: #4267B2">ماسنجر</a>
+        <a class="btn" href="http://instagram.com/dr_rashad_alhadi" target="_blank" style="background:linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">إنستغرام</a>
+      </div>
+
+      <div class="socials" style="margin-top:18px">
+        <a href="https://www.facebook.com/drrashad.MLM" target="_blank">Facebook</a>
+        <a href="https://m.me/dr.Rashad.Alhadi2022" target="_blank">Messenger</a>
+        <a href="http://instagram.com/dr_rashad_alhadi" target="_blank">Instagram</a>
+        <a href="https://t.me/Drrashad20" target="_blank">Telegram</a>
+        <a href="https://www.tiktok.com/@alhadi_rashad?_t=ZS-90sfbzg1eRl&_r=1" target="_blank">TikTok</a>
+        <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank">YouTube</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="max-width:1100px;margin:auto;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px">
+        <div style="width:44px;height:44px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--dxn-green)">🌿</div>
+        <div style="text-align:left">
+          <div style="font-weight:700;color:var(--gold)">الصحة والثراء</div>
+          <div style="font-size:0.9rem;color:#ddd">Health & Wealth — منتجات DXN</div>
+        </div>
+      </div>
+
+      <p style="margin-top:12px;color:#ddd">© 2025 الصحة والثراء | Health & Wealth — جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+<script>
+  // تبديل اللغة (عربي <-> إنجليزي)
+  function toggleLang(){
+    const html = document.documentElement;
+    const flag = document.getElementById('flagIcon');
+    const label = document.getElementById('langLabel');
+
+    if(html.lang === 'ar'){
+      html.lang = 'en'; html.dir = 'ltr';
+      flag.src = 'https://flagcdn.com/w20/us.png';
+      if(label) label.textContent = 'English';
+      // ترجمة نصية أساسية (بسيطة)
+      document.querySelector('.site-title .main').textContent = 'Health & Wealth';
+      document.querySelector('.site-title .sub').textContent = 'DXN Natural Products';
+      document.querySelectorAll('nav.main-nav a').forEach((a,i)=>{
+        const en = ['About DXN','Products','Certifications','Testimonials','Join Us','Contact'];
+        a.textContent = en[i] || a.textContent;
+      });
+      document.querySelectorAll('h2').forEach((h,i)=>{
+        const enTitles=['About DXN','DXN Products','Certifications','Testimonials','Join Us','Contact Us'];
+        h.textContent = enTitles[i] || h.textContent;
+      });
+      // زر التسجيل
+      document.querySelectorAll('.btn').forEach(b=>{
+        if(b.href && b.href.includes('eworld.dxn2u')) b.textContent='Register Now';
+      });
+    } else {
+      html.lang = 'ar'; html.dir = 'rtl';
+      flag.src = 'https://flagcdn.com/w20/ye.png';
+      if(label) label.textContent = 'العربية';
+      // إعادة تحميل بسيطة لإرجاع نصوص العربية الأصلية
+      location.reload();
+    }
+  }
+
+  // تأثير ظهور العناوين عند التمرير
+  function revealOnScroll(){
+    document.querySelectorAll('.fade-in').forEach(el=>{
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) el.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+
+</script>
 </body>
 </html>
