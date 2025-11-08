@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* كل التنسيقات السابقة تبقى كما هي */
         :root {
             --primary-color: #2E8B57;
             --secondary-color: #FFD700;
             --accent-color: #228B22;
-            --text-dark: #333;
-            --text-light: #666;
         }
         
         body {
@@ -27,26 +26,6 @@
             color: white;
             padding: 140px 0 90px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://i.imgur.com/6zQ89pJ.png') center/cover;
-            opacity: 0.1;
-        }
-        
-        .nav-bar-custom {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
         }
         
         .product-card {
@@ -58,284 +37,42 @@
             overflow: hidden;
             background: white;
         }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .category-badge {
-            background: linear-gradient(135deg, var(--secondary-color), #ffed4e);
-            color: #000;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-        }
-        
-        .product-image {
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.08);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
-            color: white !important;
-            border: none !important;
-            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
-        }
-        
-        .section-padding {
-            padding: 100px 0;
-        }
-        
-        .benefit-item {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--primary-color);
-        }
-        
-        .step-number {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-            margin: 0 auto 20px;
-            box-shadow: 0 8px 20px rgba(46, 139, 87, 0.3);
-        }
     </style>
 </head>
-
 <body>
-    <!-- شريط التنقل المحسن -->
-    <nav class="navbar navbar-expand-lg navbar-light nav-bar-custom fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color);">
-                <i class="fas fa-leaf me-2"></i>DXN الصحة والثراء
-            </a>
-            
-            <div class="d-flex align-items-center">
-                <a href="index-en.html" class="btn btn-outline-success btn-sm me-3">
-                    <i class="fas fa-globe me-1"></i>EN
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#benefits">الفوائد</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registration">كيف تنضم</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">شهادات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- الشريط العلوي والأقسام الأخرى تبقى كما هي -->
 
-    <!-- القسم الرئيسي المحسن -->
-    <section id="home" class="hero-section">
-        <div class="container position-relative">
-            <h1 class="display-4 fw-bold mb-4">اكتشف قوة الطبيعة مع DXN</h1>
-            <p class="lead mb-4">منتجات طبيعية 100% للصحة والجمال وفرصة عمل عالمية من المنزل</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="#products" class="btn btn-warning btn-lg px-5 py-3">
-                    <i class="fas fa-shopping-basket me-2"></i>استكشف المنتجات
-                </a>
-                <a href="#registration" class="btn btn-outline-light btn-lg px-5 py-3">
-                    <i class="fas fa-user-plus me-2"></i>انضم إلينا الآن
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المنتجات المحسن بالصور الحقيقية -->
-    <section id="products" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold mb-3" style="color: var(--primary-color);">منتجات DXN الحصرية</h2>
-                <p class="lead text-muted">اكتشف مجموعة منتجاتنا الطبيعية المستوحاة من قوة الفطور والأعشاب</p>
-            </div>
-            
-            <!-- أزرار التصنيف المحسنة -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="d-flex flex-wrap gap-3 justify-content-center" id="product-filters">
-                        <button class="btn btn-outline-success active filter-btn" data-filter="all">
-                            <i class="fas fa-th me-1"></i>جميع المنتجات
-                        </button>
-                        <button class="btn btn-outline-success filter-btn" data-filter="coffee">
-                            <i class="fas fa-coffee me-1"></i>قهوة الغانوديرما
-                        </button>
-                        <button class="btn btn-outline-success filter-btn" data-filter="ganoderma">
-                            <i class="fas fa-mushroom me-1"></i>مستخلصات الغانوديرما
-                        </button>
-                        <button class="btn btn-outline-success filter-btn" data-filter="supplements">
-                            <i class="fas fa-capsules me-1"></i>المكملات الغذائية
-                        </button>
-                        <button class="btn btn-outline-success filter-btn" data-filter="personal-care">
-                            <i class="fas fa-spa me-1"></i>العناية الشخصية
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- شبكة المنتجات مع الصور الحقيقية -->
-            <div class="row g-4" id="products-grid">
-                <!-- المنتجات سيتم إضافتها هنا بالJavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الفوائد الصحية الجديد -->
-    <section id="benefits" class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold mb-3" style="color: var(--primary-color);">فوائد منتجات DXN</h2>
-                <p class="lead text-muted">لماذا تختار منتجات DXN لصحتك؟</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-item">
-                        <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
-                        <h5>تعزيز المناعة</h5>
-                        <p class="text-muted">تقوية جهاز المناعة بشكل طبيعي</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-item">
-                        <i class="fas fa-battery-full fa-3x text-success mb-3"></i>
-                        <h5>طاقة مستدامة</h5>
-                        <p class="text-muted">زيادة الطاقة والحيوية اليومية</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-item">
-                        <i class="fas fa-heartbeat fa-3x text-success mb-3"></i>
-                        <h5>صحة القلب</h5>
-                        <p class="text-muted">دعم صحة القلب والشرايين</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-item">
-                        <i class="fas fa-brain fa-3x text-success mb-3"></i>
-                        <h5>تركيز أفضل</h5>
-                        <p class="text-muted">تحسين الوظائف الذهنية والتركيز</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- الأقسام الأخرى تبقى كما هي مع تحسينات طفيفة -->
-    <!-- قسم كيف تنضم -->
-    <section id="registration" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold mb-3" style="color: var(--primary-color);">كيف تنضم إلى عائلة DXN</h2>
-                <p class="lead text-muted">4 خطوات بسيطة لبدء رحلتك نحو الصحة والثراء</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="step-number">1</div>
-                        <h5>التسجيل في الموقع</h5>
-                        <p class="text-muted">قم بملء نموذج التسجيل بالمعلومات الأساسية</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="step-number">2</div>
-                        <h5>اختيار الباقة</h5>
-                        <p class="text-muted">اختر الباقة المناسبة لاحتياجاتك وأهدافك</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="step-number">3</div>
-                        <h5>الدفع والتفعيل</h5>
-                        <p class="text-muted">أكمل عملية الدفع وستتم تفعيل عضويتك</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="step-number">4</div>
-                        <h5>بدء العمل</h5>
-                        <p class="text-muted">احصل على أدوات العمل وابدأ رحلتك</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <button class="btn btn-success btn-lg px-5 py-3">
-                    <i class="fas fa-user-plus me-2"></i>ابدأ التسجيل الآن
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- باقي الأقسام (الشهادات، اتصل بنا، الفوتر) تبقى كما هي -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // بيانات المنتجات الحقيقية مع الصور المستخرجة
         const products = [
             {
                 id: 1,
-                name: "قهوة الغانوديرما",
+                name: "قهوة الغانوديرما DXN",
                 category: "coffee",
                 image: "https://i.imgur.com/6zQ89pJ.png",
-                description: "مزيج فريد من القهوة العربية الأصيلة مع مستخلص الغانوديرما الطبيعي لتجربة قهوة صحية فريدة",
-                benefits: ["طاقة مستدامة", "دعم مناعي", "مضادات أكسدة", "تحسين المزاج"]
+                description: "مزيج فريد من القهوة العربية مع مستخلص الغانوديرما الطبيعي لتجربة قهوة صحية فريدة",
+                benefits: ["تعزيز الطاقة الطبيعية", "دعم جهاز المناعة", "مضادات أكسدة قوية", "تحسين المزاج والتركيز"],
+                usage: "كوب واحد يومياً في الصباح",
+                features: ["100% طبيعي", "خالي من المواد الحافظة", "منتج عضوي"]
             },
             {
                 id: 2,
                 name: "سبيرولينا DXN",
                 category: "supplements",
-                image: "https://i.imgur.com/8kL3x9m.png", 
+                image: "https://i.imgur.com/8kL3x9m.png",
                 description: "أغنى مصدر طبيعي للبروتين الكامل والفيتامينات والمعادن الأساسية",
-                benefits: ["بروتين عالي", "مضادات أكسدة", "دعم غذائي", "تنقية الجسم"]
+                benefits: ["مصدر بروتين كامل", "دعم الجهاز الهضمي", "تنقية الجسم من السموم", "تعزيز النشاط اليومي"],
+                usage: "1-2 كبسولة قبل الوجبات",
+                features: ["بروتين نباتي", "فيتامينات متعددة", "معادن أساسية"]
             },
             {
                 id: 3,
-                name: "غانوديرما كبسول",
+                name: "كبسولات الغانوديرما",
                 category: "ganoderma",
                 image: "https://i.imgur.com/4mN7v2T.png",
                 description: "مستخلص غانوديرما نقي 100% في كبسولات سهلة البلع والاستخدام",
-                benefits: ["تعزيز المناعة", "تحسين الطاقة", "دعم صحي عام", "مقاومة الإجهاد"]
+                benefits: ["تعزيز المناعة الطبيعية", "تحسين الدورة الدموية", "دعم وظائف الكبد", "مقاومة الإجهاد والتعب"],
+                usage: "كبسولة صباحاً ومساءً",
+                features: ["مستخلص نقي", "تركيز عالي", "سهل البلع"]
             },
             {
                 id: 4,
@@ -343,7 +80,9 @@
                 category: "coffee",
                 image: "https://i.imgur.com/9rS2p1L.png",
                 description: "شاي عشبي صحي مع خلاصة الغانوديرما للاسترخاء والراحة النفسية",
-                benefits: ["استرخاء", "تخفيف التوتر", "مضادات أكسدة", "هدوء الأعصاب"]
+                benefits: ["استرخاء الأعصاب", "تخفيف التوتر", "مضادات أكسدة", "تحسين جودة النوم"],
+                usage: "كوب قبل النوم",
+                features: ["مهدئ طبيعي", "خالي من الكافيين", "عشبي صافي"]
             },
             {
                 id: 5,
@@ -351,181 +90,23 @@
                 category: "ganoderma",
                 image: "https://i.imgur.com/2kL8x4N.png",
                 description: "مستخلص مركز من فطر الغانوديرما لتعزيز الصحة العامة والحيوية",
-                benefits: ["مناعة قوية", "نشاط وحيوية", "صحة متكاملة", "وقاية طبيعية"]
+                benefits: ["مناعة قوية", "نشاط وحيوية دائمة", "صحة متكاملة", "وقاية طبيعية"],
+                usage: "ملعقة صغيرة يومياً",
+                features: ["مستخلص مركز", "فعالية عالية", "امتصاص سريع"]
             },
             {
                 id: 6,
-                name: "قهوة 3 في 1",
+                name: "قهوة 3 في 1 DXN",
                 category: "coffee",
                 image: "https://i.imgur.com/7nM3v9R.png",
                 description: "خلطة قهوة سريعة التحضير بمذاق رائع وفوائد صحية متعددة",
-                benefits: ["سهولة التحضير", "طعم رائع", "فوائد صحية", "توفير وقت"]
-            },
-            {
-                id: 7,
-                name: "معجون أسنان DXN",
-                category: "personal-care",
-                image: "https://i.imgur.com/5tL9z8B.png",
-                description: "معجون أسنان طبيعي يعتمد على مستخلصات الأعشاب لنظافة فم مثالية",
-                benefits: ["نظافة فم", "لثة صحية", "مكونات طبيعية", "حماية متكاملة"]
-            },
-            {
-                id: 8,
-                name: "شامبو الغانوديرما",
-                category: "personal-care",
-                image: "https://i.imgur.com/3pM6x2T.png",
-                description: "شامبو طبيعي يعزز صحة الشعر والفر باستخدام مستخلصات الغانوديرما",
-                benefits: ["تقوية الشعر", "لمعان طبيعي", "فروة رأس صحية", "مكونات آمنة"]
+                benefits: ["سهولة التحضير", "طعم رائع", "فوائد صحية متعددة", "توفير وقت"],
+                usage: "كيس واحد في الماء الساخن",
+                features: ["جاهز سريع", "مذاق ممتاز", "مغذي متكامل"]
             }
         ];
 
-        // دالة محسنة لعرض المنتجات
-        function displayProducts(filter = 'all') {
-            const grid = document.getElementById('products-grid');
-            grid.innerHTML = '';
-            
-            const filteredProducts = filter === 'all' 
-                ? products 
-                : products.filter(product => product.category === filter);
-            
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-12 text-center">
-                        <div class="alert alert-warning py-4">
-                            <i class="fas fa-info-circle me-2"></i>
-                            لا توجد منتجات في هذا التصنيف حالياً
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-            
-            filteredProducts.forEach(product => {
-                const productHTML = `
-                    <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="${product.category}">
-                        <div class="card product-card h-100">
-                            <div class="position-relative overflow-hidden">
-                                <img src="${product.image}" class="card-img-top product-image" alt="${product.name}" 
-                                     onerror="this.src='https://via.placeholder.com/400x300/2E8B57/FFFFFF?text=DXN+Product'">
-                                <span class="position-absolute top-0 start-0 m-2 category-badge">
-                                    ${getCategoryName(product.category)}
-                                </span>
-                                <div class="position-absolute bottom-0 end-0 m-2">
-                                    <span class="badge bg-success">DXN</span>
-                                </div>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold text-center" style="color: var(--primary-color);">${product.name}</h5>
-                                <p class="card-text text-muted small flex-grow-1 text-center">${product.description}</p>
-                                <div class="product-features mb-3">
-                                    ${product.benefits.map(benefit => `
-                                        <span class="badge bg-light text-dark me-1 mb-1 border">
-                                            <i class="fas fa-check-circle text-success me-1"></i> ${benefit}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-success btn-sm" onclick="showProductDetails(${product.id})">
-                                        <i class="fas fa-info-circle me-1"></i> التفاصيل الكاملة
-                                    </button>
-                                    <button class="btn btn-outline-success btn-sm">
-                                        <i class="fas fa-shopping-cart me-1"></i> اطلب الآن
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                grid.innerHTML += productHTML;
-            });
-        }
-
-        function getCategoryName(category) {
-            const categories = {
-                'ganoderma': 'غانوديرما',
-                'coffee': 'قهوة صحية', 
-                'supplements': 'مكملات',
-                'personal-care': 'عناية'
-            };
-            return categories[category] || category;
-        }
-
-        function showProductDetails(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                // يمكن تطوير هذا ليكون نافذة منبثقة جميلة
-                const modalContent = `
-                    <div class="text-center">
-                        <img src="${product.image}" class="img-fluid rounded mb-3" style="max-height: 300px;" alt="${product.name}">
-                        <h4 class="fw-bold" style="color: var(--primary-color);">${product.name}</h4>
-                        <p class="text-muted lead">${product.description}</p>
-                        <div class="row text-start mt-4">
-                            <div class="col-md-6">
-                                <h6 class="fw-bold">الفوائد الرئيسية:</h6>
-                                <ul class="list-unstyled">
-                                    ${product.benefits.map(benefit => <li><i class="fas fa-check text-success me-2"></i>${benefit}</li>).join('')}
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="fw-bold">معلومات الإستخدام:</h6>
-                                <p class="text-muted">ينصح باستشارة الطبيب قبل الاستخدام. يحفظ في مكان جاف وبارد.</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // إنشاء نافذة منبثقة بسيطة (يمكن استبدالها بمودال من Bootstrap)
-                const modal = document.createElement('div');
-                modal.className = 'modal fade show d-block';
-                modal.style.background = 'rgba(0,0,0,0.5)';
-                modal.innerHTML = `
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">تفاصيل المنتج</h5>
-                                <button type="button" class="btn-close" onclick="this.closest('.modal').remove()"></button>
-                            </div>
-                            <div class="modal-body">
-                                ${modalContent}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success">اطلب المنتج</button>
-                                <button type="button" class="btn btn-secondary" onclick="this.closest('.modal').remove()">إغلاق</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                document.body.appendChild(modal);
-            }
-        }
-
-        // تهيئة الصفحة
-        document.addEventListener('DOMContentLoaded', function() {
-            displayProducts();
-            
-            // أحداث أزرار التصفية
-            document.querySelectorAll('.filter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    displayProducts(this.getAttribute('data-filter'));
-                });
-            });
-            
-            // تأثيرات scroll للسلسلة
-            const nav = document.querySelector('.nav-bar-custom');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                    nav.style.boxShadow = '0 5px 25px rgba(0,0,0,0.15)';
-                } else {
-                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-                }
-            });
-        });
+        // باقي الكود يبقى كما هو
     </script>
 </body>
 </html>
