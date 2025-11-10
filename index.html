@@ -3,110 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DXN - منتجات الصحة والثراء الطبيعية</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>DXN - الاختبار</title>
     <style>
-        /* كل التنسيقات السابقة تبقى كما هي */
-        :root {
-            --primary-color: #2E8B57;
-            --secondary-color: #FFD700;
-            --accent-color: #228B22;
-        }
-        
         body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding-top: 80px;
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e6b47 100%);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2E8B57, #228B22);
             color: white;
-            padding: 140px 0 90px;
             text-align: center;
+            padding: 100px;
+            margin: 0;
         }
-        
-        .product-card {
-            border: none;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            border-radius: 20px;
-            overflow: hidden;
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .success {
             background: white;
+            color: green;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 5px;
         }
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي والأقسام الأخرى تبقى كما هي -->
-
-    <script>
-        const products = [
-            {
-                id: 1,
-                name: "قهوة الغانوديرما DXN",
-                category: "coffee",
-                image: "https://i.imgur.com/6zQ89pJ.png",
-                description: "مزيج فريد من القهوة العربية مع مستخلص الغانوديرما الطبيعي لتجربة قهوة صحية فريدة",
-                benefits: ["تعزيز الطاقة الطبيعية", "دعم جهاز المناعة", "مضادات أكسدة قوية", "تحسين المزاج والتركيز"],
-                usage: "كوب واحد يومياً في الصباح",
-                features: ["100% طبيعي", "خالي من المواد الحافظة", "منتج عضوي"]
-            },
-            {
-                id: 2,
-                name: "سبيرولينا DXN",
-                category: "supplements",
-                image: "https://i.imgur.com/8kL3x9m.png",
-                description: "أغنى مصدر طبيعي للبروتين الكامل والفيتامينات والمعادن الأساسية",
-                benefits: ["مصدر بروتين كامل", "دعم الجهاز الهضمي", "تنقية الجسم من السموم", "تعزيز النشاط اليومي"],
-                usage: "1-2 كبسولة قبل الوجبات",
-                features: ["بروتين نباتي", "فيتامينات متعددة", "معادن أساسية"]
-            },
-            {
-                id: 3,
-                name: "كبسولات الغانوديرما",
-                category: "ganoderma",
-                image: "https://i.imgur.com/4mN7v2T.png",
-                description: "مستخلص غانوديرما نقي 100% في كبسولات سهلة البلع والاستخدام",
-                benefits: ["تعزيز المناعة الطبيعية", "تحسين الدورة الدموية", "دعم وظائف الكبد", "مقاومة الإجهاد والتعب"],
-                usage: "كبسولة صباحاً ومساءً",
-                features: ["مستخلص نقي", "تركيز عالي", "سهل البلع"]
-            },
-            {
-                id: 4,
-                name: "شاي الغانوديرما",
-                category: "coffee",
-                image: "https://i.imgur.com/9rS2p1L.png",
-                description: "شاي عشبي صحي مع خلاصة الغانوديرما للاسترخاء والراحة النفسية",
-                benefits: ["استرخاء الأعصاب", "تخفيف التوتر", "مضادات أكسدة", "تحسين جودة النوم"],
-                usage: "كوب قبل النوم",
-                features: ["مهدئ طبيعي", "خالي من الكافيين", "عشبي صافي"]
-            },
-            {
-                id: 5,
-                name: "مستخلص الغانوديرما",
-                category: "ganoderma",
-                image: "https://i.imgur.com/2kL8x4N.png",
-                description: "مستخلص مركز من فطر الغانوديرما لتعزيز الصحة العامة والحيوية",
-                benefits: ["مناعة قوية", "نشاط وحيوية دائمة", "صحة متكاملة", "وقاية طبيعية"],
-                usage: "ملعقة صغيرة يومياً",
-                features: ["مستخلص مركز", "فعالية عالية", "امتصاص سريع"]
-            },
-            {
-                id: 6,
-                name: "قهوة 3 في 1 DXN",
-                category: "coffee",
-                image: "https://i.imgur.com/7nM3v9R.png",
-                description: "خلطة قهوة سريعة التحضير بمذاق رائع وفوائد صحية متعددة",
-                benefits: ["سهولة التحضير", "طعم رائع", "فوائد صحية متعددة", "توفير وقت"],
-                usage: "كيس واحد في الماء الساخن",
-                features: ["جاهز سريع", "مذاق ممتاز", "مغذي متكامل"]
-            }
-        ];
-
-        // باقي الكود يبقى كما هو
-    </script>
+    <h1>🎉 تم العمل بنجاح!</h1>
+    <p>موقع DXN يعمل الآن بشكل صحيح</p>
+    <div class="success">✅ GitHub Pages مفعل</div>
+    <div class="success">✅ الملف HTML صحيح</div>
+    <div class="success">🚀 جاهز لرفع الموقع الكامل</div>
+    <p style="margin-top: 30px;">الآن يمكنك المتابعة إلى الخطوة التالية</p>
 </body>
 </html>
