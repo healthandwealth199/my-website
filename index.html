@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DXN - الصحة والثراء</title>
+    <title>DXN العالمية - الصحة والثراء</title>
     
-    <!-- مكتبات -->
+    <!-- المكتبات -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -16,51 +16,56 @@
             --dxn-light-green: #3CB371;
             --dxn-gold: #D4AF37;
             --dxn-dark: #2C3E50;
+            --dxn-blue: #1E6B7F;
         }
         
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #f8f9fa;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         /* شريط التواصل */
         .top-bar {
             background: var(--dxn-green);
             color: white;
-            padding: 8px 0;
+            padding: 10px 0;
             font-size: 0.9rem;
         }
         
         .social-links a {
             color: white;
-            margin: 0 8px;
-            transition: color 0.3s ease;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
             color: var(--dxn-gold);
+            transform: translateY(-2px);
         }
         
         /* شريط التنقل */
         .navbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             padding: 15px 0;
+            transition: all 0.3s ease;
         }
         
         .navbar-brand {
-            font-weight: 700;
+            font-weight: 800;
             color: var(--dxn-green) !important;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
         
         .nav-link {
             color: var(--dxn-dark) !important;
-            font-weight: 500;
-            margin: 0 5px;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            margin: 0 8px;
+            transition: all 0.3s ease;
         }
         
         .nav-link:hover, .nav-link.active {
@@ -69,69 +74,59 @@
         
         /* قسم البطل */
         .hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.9), rgba(46, 139, 87, 0.8)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background: linear-gradient(rgba(46, 139, 87, 0.9), rgba(46, 139, 87, 0.85)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: 150px 0 100px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3.2rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
         }
         
-        /* الأزرار */
-        .btn-dxn {
-            background: var(--dxn-green);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            border: none;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-dxn:hover {
-            background: var(--dxn-light-green);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline-dxn {
-            border: 2px solid var(--dxn-green);
-            color: var(--dxn-green);
-            background: transparent;
-            padding: 12px 30px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-outline-dxn:hover {
-            background: var(--dxn-green);
-            color: white;
-        }
-        
-        /* قسم المنتجات */
-        .products-section {
-            padding: 80px 0;
+        /* الإحصائيات */
+        .stats-section {
             background: white;
+            padding: 60px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dxn-green);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--dxn-dark);
+            font-weight: 600;
+        }
+        
+        /* الأقسام العامة */
+        .section-padding {
+            padding: 80px 0;
         }
         
         .section-title {
             color: var(--dxn-green);
-            font-weight: 700;
-            margin-bottom: 40px;
+            font-weight: 800;
+            margin-bottom: 50px;
             text-align: center;
             position: relative;
         }
@@ -139,85 +134,131 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             right: 50%;
             transform: translateX(50%);
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 4px;
             background: var(--dxn-gold);
+            border-radius: 2px;
         }
         
+        /* كروت المنتجات */
         .product-card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             margin-bottom: 30px;
-            border: 1px solid #eee;
+            border: none;
             overflow: hidden;
+            height: 100%;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
         
         .product-image {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
         }
         
         .product-body {
-            padding: 20px;
+            padding: 25px;
         }
         
         .product-title {
             color: var(--dxn-dark);
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .product-features {
+            margin-bottom: 20px;
+        }
+        
+        .feature-badge {
+            background: #e8f5e8;
+            color: var(--dxn-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 5px;
+            display: inline-block;
         }
         
         .product-price {
             color: var(--dxn-green);
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 800;
+            font-size: 1.3rem;
         }
         
-        /* قسم المميزات */
-        .features-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        
-        .feature-box {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
+        /* أزرار */
+        .btn-dxn {
+            background: var(--dxn-green);
+            color: white;
+            padding: 12px 30px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: none;
             transition: all 0.3s ease;
-            height: 100%;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
         }
         
-        .feature-box:hover {
+        .btn-dxn:hover {
+            background: var(--dxn-light-green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+        }
+        
+        /* قسم الشهادات */
+        .certificates-section {
+            background: linear-gradient(135deg, var(--dxn-blue), var(--dxn-dark));
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .certificate-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.15);
         }
         
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--dxn-green);
+        .certificate-icon {
+            font-size: 3rem;
+            color: var(--dxn-gold);
             margin-bottom: 20px;
         }
         
-        /* قسم التسجيل */
-        .registration-section {
-            padding: 80px 0;
+        /* قسم الدخل */
+        .income-section {
             background: white;
+            padding: 80px 0;
         }
         
-        .step-box {
+        .income-step {
             text-align: center;
             padding: 30px 20px;
         }
@@ -225,65 +266,55 @@
         .step-number {
             background: var(--dxn-green);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1.5rem;
             margin: 0 auto 20px;
         }
         
-        /* قسم التواصل */
-        .contact-section {
+        /* قصص النجاح */
+        .stories-section {
+            background: #f8f9fa;
             padding: 80px 0;
-            background: var(--dxn-dark);
-            color: white;
         }
         
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .contact-method {
-            background: rgba(255,255,255,0.1);
-            padding: 15px 25px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-        }
-        
-        .contact-method:hover {
-            background: var(--dxn-green);
-            color: white;
-            transform: translateY(-3px);
+        .story-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-right: 5px solid var(--dxn-green);
         }
         
         /* الفوتر */
         footer {
-            background: #1a252f;
+            background: var(--dxn-dark);
             color: white;
-            padding: 40px 0 20px;
+            padding: 50px 0 20px;
         }
         
         /* تحسينات للجوال */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero {
+                padding: 120px 0 80px;
             }
             
-            .hero {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-padding {
                 padding: 60px 0;
             }
             
-            .products-section, .features-section, .registration-section, .contact-section {
-                padding: 50px 0;
+            .stat-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -295,7 +326,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="contact-info">
-                    <span>DXN - الصحة والثراء</span>
+                    <span><i class="fas fa-phone me-2"></i>DXN العالمية - منذ 1993</span>
                 </div>
                 <div class="social-links">
                     <a href="https://wa.me/967733604941" target="_blank" title="واتساب">
@@ -324,8 +355,8 @@
     <!-- شريط التنقل -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-leaf me-2"></i>DXN
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-leaf me-2"></i>DXN العالمية
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -335,9 +366,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">عن DXN</a></li>
                     <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">المميزات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registration">كيفية الانضمام</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">الشهادات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#income">الدخل الإضافي</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">قصص النجاح</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
                 </ul>
             </div>
@@ -348,236 +381,328 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1>اكتشف عالم DXN للصحة والثراء</h1>
-                    <p class="mb-4">انضم إلى العائلة العالمية واستفد من منتجات الغانوديرما الفريدة وفرصة العمل من المنزل</p>
+                <div class="col-lg-10 text-center">
+                    <h1>DXN العالمية - رحلة الصحة والثراء</h1>
+                    <p class="lead mb-4">اكتشف قوة الطبيعة مع منتجات الغانوديرما الفريدة وانضم إلى عائلة 2 مليون عضو حول العالم</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="#products" class="btn-dxn">
+                        <a href="#products" class="btn-dxn btn-lg">
                             <i class="fas fa-shopping-basket me-2"></i>استكشف المنتجات
                         </a>
-                        <a href="#registration" class="btn-outline-dxn">
-                            <i class="fas fa-user-plus me-2"></i>انضم إلينا الآن
+                        <a href="#income" class="btn-dxn btn-lg" style="background: var(--dxn-gold);">
+                            <i class="fas fa-chart-line me-2"></i>اكتشف فرصة الدخل
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- إحصائيات الشركة -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">+180</div>
+                        <div class="stat-label">دولة حول العالم</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">+2M</div>
+                        <div class="stat-label">عضو مسجل</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">سنة من الخبرة</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">منتج طبيعي</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن الشركة -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">عن DXN العالمية</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3 class="mb-4" style="color: var(--dxn-green);">ريادة في عالم الصحة الطبيعية منذ 1993</h3>
+                        <p class="mb-4">DXN هي شركة عالمية رائدة في مجال المنتجات الصحية الطبيعية، تأسست في ماليزيا وتوسعت لتشمل أكثر من 180 دولة حول العالم.</p>
+                        
+                        <div class="achievements mb-4">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-3"></i>
+                                        <span>منتجات 100% طبيعية</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-3"></i>
+                                        <span>شهادات جودة عالمية</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-3"></i>
+                                        <span>تكنولوجيا متطورة</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-3"></i>
+                                        <span>بحث وتطوير مستمر</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://i.imgur.com/6zQ89pJ.png" alt="شركة DXN" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- قسم المنتجات -->
-    <section id="products" class="products-section">
+    <section id="products" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-title">منتجات DXN المتميزة</h2>
             
             <div class="row">
+                <!-- منتج 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card">
                         <img src="https://i.imgur.com/6zQ89pJ.png" alt="قهوة الغانوديرما" class="product-image">
                         <div class="product-body">
                             <h3 class="product-title">قهوة الغانوديرما</h3>
-                            <p class="text-muted">مزيج فريد من القهوة العربية مع مستخلص الغانوديرما الطبيعي</p>
+                            <p class="product-description">مزيج فريد من القهوة العربية الأصيلة مع مستخلص الغانوديرما الطبيعي لتجربة قهوة صحية فريدة</p>
+                            <div class="product-features">
+                                <span class="feature-badge">طاقة مستدامة</span>
+                                <span class="feature-badge">دعم مناعي</span>
+                                <span class="feature-badge">مضادات أكسدة</span>
+                            </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">95 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب قهوة الغانوديرما" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
+                                <a href="https://wa.me/967733604941?text=أريد طلب قهوة الغانوديرما" target="_blank" class="btn-dxn">اطلب الآن</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- منتج 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card">
                         <img src="https://i.imgur.com/8kL3x9m.png" alt="سبيرولينا DXN" class="product-image">
                         <div class="product-body">
                             <h3 class="product-title">سبيرولينا DXN</h3>
-                            <p class="text-muted">أغنى مصدر طبيعي للبروتين والفيتامينات والمعادن</p>
+                            <p class="product-description">أغنى مصدر طبيعي للبروتين الكامل والفيتامينات والمعادن الأساسية للصحة العامة</p>
+                            <div class="product-features">
+                                <span class="feature-badge">بروتين عالي</span>
+                                <span class="feature-badge">مضادات أكسدة</span>
+                                <span class="feature-badge">دعم غذائي</span>
+                            </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">120 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب سبيرولينا DXN" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
+                                <a href="https://wa.me/967733604941?text=أريد طلب سبيرولينا DXN" target="_blank" class="btn-dxn">اطلب الآن</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- منتج 3 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card">
                         <img src="https://i.imgur.com/4mN7v2T.png" alt="كبسولات الغانوديرما" class="product-image">
                         <div class="product-body">
                             <h3 class="product-title">كبسولات الغانوديرما</h3>
-                            <p class="text-muted">مستخلص غانوديرما نقي 100% في كبسولات سهلة الاستخدام</p>
+                            <p class="product-description">مستخلص غانوديرما نقي 100% في كبسولات سهلة البلع والاستخدام للصحة العامة</p>
+                            <div class="product-features">
+                                <span class="feature-badge">تعزيز المناعة</span>
+                                <span class="feature-badge">تحسين الطاقة</span>
+                                <span class="feature-badge">دعم صحي عام</span>
+                            </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">85 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب كبسولات الغانوديرما" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
-                        <img src="https://i.imgur.com/9rS2p1L.png" alt="شاي الغانوديرما" class="product-image">
-                        <div class="product-body">
-                            <h3 class="product-title">شاي الغانوديرما</h3>
-                            <p class="text-muted">شاي عشبي صحي مع خلاصة الغانوديرما للاسترخاء</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">75 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب شاي الغانوديرما" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
-                        <img src="https://i.imgur.com/2kL8x4N.png" alt="مستخلص الغانوديرما" class="product-image">
-                        <div class="product-body">
-                            <h3 class="product-title">مستخلص الغانوديرما</h3>
-                            <p class="text-muted">مستخلص مركز من فطر الغانوديرما لتعزيز الصحة</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">150 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب مستخلص الغانوديرما" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
-                        <img src="https://i.imgur.com/7nM3v9R.png" alt="قهوة 3 في 1" class="product-image">
-                        <div class="product-body">
-                            <h3 class="product-title">قهوة 3 في 1</h3>
-                            <p class="text-muted">خلطة قهوة سريعة التحضير بمذاق رائع وفوائد صحية</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">65 ر.س</span>
-                                <a href="https://wa.me/967733604941?text=أريد طلب قهوة 3 في 1" target="_blank" class="btn-dxn btn-sm">اطلب الآن</a>
+                                <a href="https://wa.me/967733604941?text=أريد طلب كبسولات الغانوديرما" target="_blank" class="btn-dxn">اطلب الآن</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://wa.me/967733604941?text=أريد معرفة المزيد عن منتجات DXN" target="_blank" class="btn-dxn btn-lg">
+                    <i class="fas fa-list me-2"></i>استعرض جميع المنتجات
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- قسم المميزات -->
-    <section id="features" class="features-section">
+    <!-- قسم الشهادات -->
+    <section id="certificates" class="certificates-section">
         <div class="container">
-            <h2 class="section-title">لماذا تختار DXN؟</h2>
+            <h2 class="section-title text-white">شهاداتنا وجوائزنا</h2>
             
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4>انتشار عالمي</h4>
-                        <p class="text-muted">أكثر من 190 دولة حول العالم</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
+                <div class="col-md-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <h4>جودة مضمونة</h4>
-                        <p class="text-muted">شهادات جودة عالمية</p>
+                        <h4>شهادة ISO العالمية</h4>
+                        <p>شهادة الجودة العالمية للمواصفات القياسية</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
+                <div class="col-md-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <h4>منتجات طبيعية</h4>
-                        <p class="text-muted">100% منتجات عضوية طبيعية</p>
+                        <h4>ممارسات التصنيع الجيد</h4>
+                        <p>شهادة GMP لأساليب التصنيع المتميزة</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
+                <div class="col-md-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-trophy"></i>
                         </div>
-                        <h4>دخل إضافي</h4>
-                        <p class="text-muted">فرصة عمل من المنزل</p>
+                        <h4>جائزة التميز</h4>
+                        <p>جائزة التميز في المنتجات الطبيعية</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم التسجيل -->
-    <section id="registration" class="registration-section">
+    <!-- قسم الدخل الإضافي -->
+    <section id="income" class="income-section">
         <div class="container">
-            <h2 class="section-title">كيف تنضم إلى DXN</h2>
+            <h2 class="section-title">كيف تحقق دخل إضافي مع DXN</h2>
             
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="step-box">
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-step">
                         <div class="step-number">1</div>
-                        <h4>التسجيل</h4>
-                        <p class="text-muted">قم بملء نموذج التسجيل بالمعلومات الأساسية</p>
+                        <h4>انضم مجاناً</h4>
+                        <p class="text-muted">سجل كعضو في DXN مجاناً وابدأ رحلتك</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="step-box">
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-step">
                         <div class="step-number">2</div>
-                        <h4>اختيار الباقة</h4>
-                        <p class="text-muted">اختر الباقة المناسبة لاحتياجاتك</p>
+                        <h4>استخدم المنتجات</h4>
+                        <p class="text-muted">جرب منتجاتنا وشارك تجربتك مع الآخرين</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="step-box">
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-step">
                         <div class="step-number">3</div>
-                        <h4>الدفع</h4>
-                        <p class="text-muted">أكمل عملية الدفع بشكل آمن</p>
+                        <h4>ابن فريقك</h4>
+                        <p class="text-muted">دع الآخرين يكتشفون فوائد DXN معك</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="step-box">
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-step">
                         <div class="step-number">4</div>
-                        <h4>بدء العمل</h4>
-                        <p class="text-muted">احصل على أدوات العمل وابدأ رحلتك</p>
+                        <h4>اكسب المكافآت</h4>
+                        <p class="text-muted">احصل على عمولات ومكافآت شهرية</p>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4">
-                <a href="https://wa.me/967733604941" target="_blank" class="btn-dxn btn-lg">
-                    <i class="fab fa-whatsapp me-2"></i>ابدأ التسجيل عبر واتساب
+            <div class="text-center mt-5">
+                <a href="https://wa.me/967733604941?text=أريد معرفة المزيد عن فرصة الدخل مع DXN" target="_blank" class="btn-dxn btn-lg">
+                    <i class="fas fa-chart-line me-2"></i>اكتشف خطة الدخل الكاملة
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قصص النجاح -->
+    <section id="stories" class="stories-section">
+        <div class="container">
+            <h2 class="section-title">قصص نجاح من العالم العربي</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="story-card">
+                        <h4>محمد من السعودية</h4>
+                        <p class="text-muted">"بدأت مع DXN بدخل إضافي والآن أصبح مصدري الرئيسي للدخل. المنتجات غيرت صحتي وحياتي"</p>
+                        <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="story-card">
+                        <h4>فاطمة من الإمارات</h4>
+                        <p class="text-muted">"DXN منحتني الاستقلال المالي وأنا أعمل من المنزل. ساعدتني في تحقيق أحلامي"</p>
+                        <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- قسم التواصل -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="section-padding">
         <div class="container">
-            <h2 class="section-title text-white">تواصل معنا</h2>
-            <p class="text-center text-white mb-5">اختر الطريقة المناسبة للتواصل معنا</p>
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="text-center text-muted mb-5">اختر الطريقة المناسبة للتواصل معنا</p>
             
-            <div class="contact-methods">
-                <a href="https://wa.me/967733604941" target="_blank" class="contact-method">
-                    <i class="fab fa-whatsapp me-2"></i>واتساب
-                </a>
-                <a href="http://instagram.com/dr_rashad_alhadi" target="_blank" class="contact-method">
-                    <i class="fab fa-instagram me-2"></i>انستجرام
-                </a>
-                <a href="https://m.me/dr.Rashad.Alhadi2022" target="_blank" class="contact-method">
-                    <i class="fab fa-facebook-messenger me-2"></i>ماسنجر
-                </a>
-                <a href="https://www.facebook.com/drrashad.MLM" target="_blank" class="contact-method">
-                    <i class="fab fa-facebook-f me-2"></i>فيسبوك
-                </a>
-                <a href="https://t.me/Drrashad20" target="_blank" class="contact-method">
-                    <i class="fab fa-telegram-plane me-2"></i>تليجرام
-                </a>
-                <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank" class="contact-method">
-                    <i class="fab fa-youtube me-2"></i>يوتيوب
-                </a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-methods d-flex justify-content-center flex-wrap gap-3">
+                        <a href="https://wa.me/967733604941" target="_blank" class="btn-dxn">
+                            <i class="fab fa-whatsapp me-2"></i>واتساب
+                        </a>
+                        <a href="http://instagram.com/dr_rashad_alhadi" target="_blank" class="btn-dxn">
+                            <i class="fab fa-instagram me-2"></i>انستجرام
+                        </a>
+                        <a href="https://m.me/dr.Rashad.Alhadi2022" target="_blank" class="btn-dxn">
+                            <i class="fab fa-facebook-messenger me-2"></i>ماسنجر
+                        </a>
+                        <a href="https://www.facebook.com/drrashad.MLM" target="_blank" class="btn-dxn">
+                            <i class="fab fa-facebook-f me-2"></i>فيسبوك
+                        </a>
+                        <a href="https://t.me/Drrashad20" target="_blank" class="btn-dxn">
+                            <i class="fab fa-telegram-plane me-2"></i>تليجرام
+                        </a>
+                        <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank" class="btn-dxn">
+                            <i class="fab fa-youtube me-2"></i>يوتيوب
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -587,8 +712,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>DXN الصحة والثراء</h5>
-                    <p>رحلة نحو صحة أفضل وحياة أفضل</p>
+                    <h5>DXN العالمية</h5>
+                    <p>رحلة نحو صحة أفضل وحياة أفضل منذ 1993</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p>جميع الحقوق محفوظة &copy; 2024</p>
@@ -609,6 +734,18 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // تأثير scroll على navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
         });
     </script>
 </body>
