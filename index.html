@@ -18,6 +18,8 @@
             --accent-blue: #4169E1;
             --nature-red: #DC143C;
             --gold-color: #FFD700;
+            --text-dark: #333333;
+            --text-light: #666666;
         }
         
         * {
@@ -31,21 +33,29 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
             padding-top: 80px;
             line-height: 1.6;
+            color: var(--text-dark);
+            min-height: 100vh;
         }
         
         /* شريط التواصل الاجتماعي */
         .social-bar {
             background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
             color: white;
-            padding: 10px 0;
+            padding: 12px 0;
             text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
         
         .social-links a {
             color: white;
-            margin: 0 10px;
-            font-size: 1.2rem;
+            margin: 0 12px;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
         .social-links a:hover {
@@ -55,16 +65,29 @@
         
         /* شريط التنقل */
         .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
+            background: rgba(255, 255, 255, 0.98) !important;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            padding: 12px 0;
+            padding: 15px 0;
+            margin-top: 50px;
         }
         
         .navbar-brand {
             font-weight: 800;
             color: var(--primary-green) !important;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-dark) !important;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-green) !important;
+            transform: translateY(-2px);
         }
         
         /* قسم البطل مع خلفية طبيعية */
@@ -74,7 +97,7 @@
                 var(--accent-blue) 50%, 
                 var(--nature-red) 100%);
             color: white;
-            padding: 140px 0 90px;
+            padding: 160px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -88,7 +111,7 @@
             right: 0;
             bottom: 0;
             background: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            opacity: 0.2;
+            opacity: 0.15;
             background-size: cover;
             background-position: center;
         }
@@ -99,14 +122,14 @@
         }
         
         .hero-section h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .hero-section .lead {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 2.5rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
@@ -115,17 +138,17 @@
         .product-card {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             margin-bottom: 30px;
             border: none;
             overflow: hidden;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
             border-color: var(--primary-green);
         }
         
@@ -133,20 +156,21 @@
             width: 100%;
             height: 280px;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
         
         .product-card:hover .product-image {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
         
         .category-badge {
             background: linear-gradient(135deg, var(--gold-color), #ffed4e);
             color: #000;
-            padding: 8px 20px;
+            padding: 10px 20px;
             border-radius: 25px;
             font-weight: bold;
             font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
         }
         
         /* أقسام الموقع */
@@ -157,42 +181,51 @@
         .section-title {
             color: var(--primary-green);
             font-weight: 800;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             position: relative;
+            text-align: center;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            right: 0;
-            width: 100px;
-            height: 4px;
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 120px;
+            height: 5px;
             background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
-            border-radius: 2px;
+            border-radius: 3px;
         }
         
         /* قسم الفوائد */
         .benefit-item {
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 15px;
-            padding: 40px 25px;
+            border-radius: 20px;
+            padding: 50px 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            border-left: 5px solid var(--primary-green);
-            transition: all 0.3s ease;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary-green);
+            transition: all 0.4s ease;
+            height: 100%;
         }
         
         .benefit-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
         }
         
         .benefit-item i {
             color: var(--primary-green);
-            margin-bottom: 20px;
-            font-size: 3rem;
+            margin-bottom: 25px;
+            font-size: 3.5rem;
+        }
+        
+        .benefit-item h5 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
         }
         
         /* أزرار */
@@ -200,15 +233,18 @@
             background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
             border: none;
             color: white;
-            padding: 15px 35px;
-            font-weight: 600;
+            padding: 16px 40px;
+            font-weight: 700;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
         }
         
         .btn-nature:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(46, 139, 87, 0.4);
             color: white;
         }
         
@@ -216,57 +252,141 @@
             background: linear-gradient(135deg, var(--gold-color), #ffed4e);
             border: none;
             color: #000;
-            padding: 15px 35px;
-            font-weight: 600;
+            padding: 16px 40px;
+            font-weight: 700;
             border-radius: 50px;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .btn-warning:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+            color: #000;
+        }
+        
+        /* خطوات التسجيل */
+        .step-number {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover .step-number {
+            transform: scale(1.1);
         }
         
         /* قسم وسائل التواصل */
         .contact-section {
             background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 50px 30px;
             text-align: center;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            height: 100%;
         }
         
         .contact-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
         }
         
         .contact-card i {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             color: var(--gold-color);
+        }
+        
+        .contact-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
         }
         
         /* تحسينات للجوال */
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 100px 0 60px;
-            }
-            
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-padding {
-                padding: 60px 0;
+            .social-bar {
+                padding: 10px 0;
             }
             
             .social-links a {
-                margin: 0 5px;
+                margin: 0 8px;
+                font-size: 1.1rem;
+            }
+            
+            .navbar {
+                margin-top: 45px;
+                padding: 12px 0;
+            }
+            
+            .hero-section {
+                padding: 120px 0 70px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-section .lead {
+                font-size: 1.2rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn-nature, .btn-warning {
+                padding: 14px 30px;
                 font-size: 1rem;
+            }
+            
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .benefit-item {
+                padding: 35px 20px;
+            }
+            
+            .contact-card {
+                padding: 35px 20px;
             }
         }
         
@@ -274,6 +394,22 @@
         .arabic-text {
             line-height: 1.8;
             text-align: justify;
+        }
+        
+        /* تخصيص البطاقات */
+        .card-body {
+            padding: 25px;
+        }
+        
+        .product-features .badge {
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            margin: 4px;
+        }
+        
+        /* تخصيص الفوتر */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e) !important;
         }
     </style>
 </head>
@@ -308,7 +444,7 @@
     <!-- شريط التنقل -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#home">
                 <i class="fas fa-leaf me-2"></i>DXN الصحة والثراء
             </a>
             
@@ -341,10 +477,69 @@
                             <a href="#products" class="btn btn-warning btn-lg">
                                 <i class="fas fa-shopping-basket me-2"></i>استكشف المنتجات
                             </a>
-                            <a href="#registration" class="btn btn-nature btn-lg">
-                                <i class="fas fa-user-plus me-2"></i>انضم إلينا الآن
+                            <a href="https://wa.me/967733604941" target="_blank" class="btn btn-nature btn-lg">
+                                <i class="fab fa-whatsapp me-2"></i>تواصل معنا
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title text-start">عن شركة DXN العالمية</h2>
+                    <p class="lead mb-4 arabic-text">
+                        DXN هي شركة عالمية رائدة في مجال المنتجات الصحية الطبيعية، تأسست عام 1993 في ماليزيا. 
+                        نحن نتميز في تقديم منتجات الغانوديرما والفطر الطبي التي تعزز الصحة والرفاهية الطبيعية.
+                    </p>
+                    <div class="row">
+                        <div class="col-6 col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-globe fa-2x text-success me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">أكثر من 190 دولة</h5>
+                                    <p class="text-muted">انتشار عالمي</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-users fa-2x text-success me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">ملايين الأعضاء</h5>
+                                    <p class="text-muted">مجتمع عالمي</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-award fa-2x text-success me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">شهادات جودة</h5>
+                                    <p class="text-muted">معايير عالمية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-leaf fa-2x text-success me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">منتجات طبيعية</h5>
+                                    <p class="text-muted">100% عضوية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="text-center">
+                        <img src="https://i.imgur.com/6zQ89pJ.png" 
+                             alt="شركة DXN العالمية" class="img-fluid rounded shadow" style="max-height: 400px;">
                     </div>
                 </div>
             </div>
@@ -360,7 +555,7 @@
             </div>
             
             <div class="row g-4" id="products-grid">
-                <!-- المنتجات سيتم إضافتها هنا -->
+                <!-- المنتجات سيتم إضافتها هنا بالJavaScript -->
             </div>
         </div>
     </section>
@@ -416,41 +611,29 @@
             
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">
-                            1
-                        </div>
+                    <div class="text-center step-item">
+                        <div class="step-number">1</div>
                         <h5>التسجيل في الموقع</h5>
                         <p class="text-muted">قم بملء نموذج التسجيل بالمعلومات الأساسية الشخصية</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">
-                            2
-                        </div>
+                    <div class="text-center step-item">
+                        <div class="step-number">2</div>
                         <h5>اختيار الباقة</h5>
                         <p class="text-muted">اختر الباقة المناسبة لاحتياجاتك وأهدافك المالية</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">
-                            3
-                        </div>
+                    <div class="text-center step-item">
+                        <div class="step-number">3</div>
                         <h5>الدفع والتفعيل</h5>
                         <p class="text-muted">أكمل عملية الدفع وستتم تفعيل عضويتك فوراً</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">
-                            4
-                        </div>
+                    <div class="text-center step-item">
+                        <div class="step-number">4</div>
                         <h5>بدء العمل</h5>
                         <p class="text-muted">احصل على أدوات العمل وابدأ رحلتك نحو النجاح</p>
                     </div>
@@ -458,7 +641,7 @@
             </div>
             
             <div class="text-center mt-4">
-                <a href="https://wa.me/967733604941" class="btn btn-nature btn-lg">
+                <a href="https://wa.me/967733604941" target="_blank" class="btn btn-nature btn-lg">
                     <i class="fab fa-whatsapp me-2"></i>ابدأ التسجيل عبر واتساب
                 </a>
             </div>
@@ -479,7 +662,7 @@
                         <i class="fab fa-whatsapp"></i>
                         <h4>واتساب</h4>
                         <p>التواصل المباشر والسريع</p>
-                        <a href="https://wa.me/967733604941" target="_blank" class="btn btn-warning btn-sm">
+                        <a href="https://wa.me/967733604941" target="_blank" class="btn btn-warning btn-sm mt-3">
                             ابدأ المحادثة
                         </a>
                     </div>
@@ -489,7 +672,7 @@
                         <i class="fab fa-telegram-plane"></i>
                         <h4>تليجرام</h4>
                         <p>قناة التحديثات اليومية</p>
-                        <a href="https://t.me/Drrashad20" target="_blank" class="btn btn-warning btn-sm">
+                        <a href="https://t.me/Drrashad20" target="_blank" class="btn btn-warning btn-sm mt-3">
                             انضم للقناة
                         </a>
                     </div>
@@ -499,8 +682,41 @@
                         <i class="fab fa-youtube"></i>
                         <h4>يوتيوب</h4>
                         <p>شروحات وفيديوهات تعليمية</p>
-                        <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank" class="btn btn-warning btn-sm">
+                        <a href="https://youtube.com/channel/UC7qWm46BEBFNA8BI5T6fKqg" target="_blank" class="btn btn-warning btn-sm mt-3">
                             زيارة القناة
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <i class="fab fa-instagram"></i>
+                        <h4>انستجرام</h4>
+                        <p>متابعة يومية وأخبار</p>
+                        <a href="http://instagram.com/dr_rashad_alhadi" target="_blank" class="btn btn-warning btn-sm mt-3">
+                            تابعنا
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <i class="fab fa-facebook-f"></i>
+                        <h4>فيسبوك</h4>
+                        <p>صفحة العمل الرسمية</p>
+                        <a href="https://www.facebook.com/drrashad.MLM" target="_blank" class="btn btn-warning btn-sm mt-3">
+                            زر الصفحة
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <h4>ماسنجر</h4>
+                        <p>رسائل فورية ومباشرة</p>
+                        <a href="https://m.me/dr.Rashad.Alhadi2022" target="_blank" class="btn btn-warning btn-sm mt-3">
+                            ابدأ المحادثة
                         </a>
                     </div>
                 </div>
@@ -511,13 +727,13 @@
     <!-- الفوتر -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h5>DXN الصحة والثراء</h5>
-                    <p>رحلة نحو صحة أفضل وحياة أفضل</p>
+                    <h5 class="mb-2">DXN الصحة والثراء</h5>
+                    <p class="mb-0">رحلة نحو صحة أفضل وحياة أفضل</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p>جميع الحقوق محفوظة &copy; 2024</p>
+                    <p class="mb-0">جميع الحقوق محفوظة &copy; 2024</p>
                 </div>
             </div>
         </div>
@@ -594,25 +810,25 @@
                 const productHTML = `
                     <div class="col-md-6 col-lg-4">
                         <div class="card product-card h-100">
-                            <div class="position-relative">
+                            <div class="position-relative overflow-hidden">
                                 <img src="${product.image}" class="product-image" alt="${product.name}">
                                 <span class="position-absolute top-0 start-0 m-2 category-badge">
                                     ${product.category === 'coffee' ? 'قهوة' : 
                                       product.category === 'supplements' ? 'مكملات' : 'غانوديرما'}
                                 </span>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">${product.name}</h5>
-                                <p class="card-text text-muted">${product.description}</p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-center mb-3">${product.name}</h5>
+                                <p class="card-text text-muted flex-grow-1 text-center">${product.description}</p>
                                 <div class="product-features mb-3">
                                     ${product.benefits.map(benefit => `
-                                        <span class="badge bg-light text-dark me-1 mb-1">
-                                            <i class="fas fa-check text-success me-1"></i> ${benefit}
+                                        <span class="badge bg-light text-dark me-1 mb-2 border">
+                                            <i class="fas fa-check-circle text-success me-1"></i> ${benefit}
                                         </span>
                                     `).join('')}
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 text-success mb-0">${product.price}</span>
+                                <div class="d-flex justify-content-between align-items-center mt-auto">
+                                    <span class="h5 text-success mb-0 fw-bold">${product.price}</span>
                                     <a href="https://wa.me/967733604941?text=مرحباً، أريد طلب ${product.name}" 
                                        target="_blank" class="btn btn-nature btn-sm">
                                         <i class="fab fa-whatsapp me-1"></i>اطلب الآن
@@ -629,6 +845,18 @@
         // تهيئة الصفحة
         document.addEventListener('DOMContentLoaded', function() {
             displayProducts();
+            
+            // تأثيرات scroll للسلسلة
+            const nav = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.boxShadow = '0 5px 25px rgba(0,0,0,0.15)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                }
+            });
         });
     </script>
 </body>
