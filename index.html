@@ -750,3 +750,128 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DXN - النظام الاحترافي للصور</title>
+    <style>
+        /* نظام الصور المتكامل */
+        .image-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.2);
+        }
+        
+        .optimized-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover .optimized-image {
+            transform: scale(1.05);
+        }
+        
+        .image-info {
+            padding: 20px;
+        }
+        
+        .image-title {
+            color: #2E8B57;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* تأثيرات التحميل */
+        .image-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- نظام الصور الجاهز للاستخدام -->
+    <div class="image-system">
+        
+        <!-- منتج 1 -->
+        <div class="image-card">
+            <img src="https://i.imgur.com/6zQ89pJ.png" 
+                 alt="قهوة الغانوديرما DXN" 
+                 class="optimized-image">
+            <div class="image-info">
+                <h3 class="image-title">قهوة الغانوديرما</h3>
+                <p>مزيج فريد من القهوة العربية والغانوديرما الطبيعية</p>
+            </div>
+        </div>
+        
+        <!-- منتج 2 -->
+        <div class="image-card">
+            <img src="https://i.imgur.com/8kL3x9m.png" 
+                 alt="سبيرولينا DXN" 
+                 class="optimized-image">
+            <div class="image-info">
+                <h3 class="image-title">سبيرولينا DXN</h3>
+                <p>أغنى مصدر طبيعي للبروتين والفيتامينات</p>
+            </div>
+        </div>
+        
+        <!-- منتج 3 -->
+        <div class="image-card">
+            <img src="https://i.imgur.com/4mN7v2T.png" 
+                 alt="كبسولات الغانوديرما" 
+                 class="optimized-image">
+            <div class="image-info">
+                <h3 class="image-title">كبسولات الغانوديرما</h3>
+                <p>مستخلص نقي 100% في كبسولات سهلة الاستخدام</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // نظام تحميل ذكي للصور
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.optimized-image');
+            
+            images.forEach(img => {
+                // إضافة تأثير التحميل
+                img.classList.add('image-loading');
+                
+                // محاكاة تحميل الصور
+                img.onload = function() {
+                    this.classList.remove('image-loading');
+                };
+                
+                // في حالة الخطأ
+                img.onerror = function() {
+                    this.classList.remove('image-loading');
+                    this.src = 'https://via.placeholder.com/400x300/2E8B57/FFFFFF?text=DXN+Product';
+                };
+            });
+        });
+    </script>
+</body>
+</html>
